@@ -27,6 +27,7 @@ class BuildResult:
     name: str
     seconds: float
     log: str = ""
+    build_dir: Path | None = None
 
     @property
     def error_summary(self) -> str:
@@ -68,8 +69,8 @@ def compile_kernel(
             verbose=verbose,
         )
     except Exception as exc:  # torch raises RuntimeError with the full compiler output
-        return BuildResult(False, None, name, time.perf_counter() - start, log=str(exc))
-    return BuildResult(True, module, name, time.perf_counter() - start)
+        return BuildResult(False, None, name, time.perf_counter() - start, log=str(exc), build_dir=build_dir)
+    return BuildResult(True, module, name, time.perf_counter() - start, build_dir=build_dir)
 
 
 def compile_file(path: str | Path, spec: OpSpec, **kwargs: Any) -> BuildResult:

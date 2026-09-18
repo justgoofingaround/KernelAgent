@@ -28,10 +28,10 @@ Goal: the agent can "see" why a kernel is slow or unsafe.
 
 - [ ] `ncu` wrapper: profile a single kernel launch from a script
 - [ ] Parse ncu metrics to JSON (DRAM BW %, SM occupancy, achieved FLOPs, warp stall reasons, bank conflicts)
-- [ ] Roofline classification: memory-bound vs compute-bound vs latency-bound
+- [x] Roofline classification: memory-bound vs compute-bound vs latency-bound
 - [ ] compute-sanitizer wrapper (memcheck, racecheck, initcheck) with parsed error output
 - [ ] Map sanitizer and ncu findings back to source lines (`-lineinfo`)
-- [ ] Human-readable "profile summary" text (future agent prompt input)
+- [x] Human-readable "profile summary" text (future agent prompt input)
 - [ ] Tests: planted race and out-of-bounds kernels are caught
 
 ## M3 Agent loop v1 (OpenRouter)
