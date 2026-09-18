@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.cache/
+.pytest_cache/
+.venv/
+.env
+.ipynb_checkpoints/
+*.ncu-rep
+*.nsys-rep
+runs/
